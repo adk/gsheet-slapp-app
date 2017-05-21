@@ -37,9 +37,40 @@ slapp.use((msg, next) => {
 slapp.command('/cogs', (msg) => {
   // `respond` is used for actions or commands and uses the `response_url` provided by the 
   // incoming request from Slack 
-  msg.respond(`cogs!`)
+  msg.respond(`Please authorize this app by visiting this url and entering the code here:`, )
+  
+   // respond with an interactive message with buttons Yes and No
+  msg
+  .say({
+    text: '',
+    attachments: [
+      {
+        text: 'Are you sure?',
+        fallback: 'Are you sure?',
+        callback_id: 'doit_confirm_callback',
+        actions: [
+          { name: 'answer', text: 'Yes', type: 'button', value: 'yes' },
+          { name: 'answer', text: 'No', type: 'button', value: 'no' }
+        ]
+      }]
+    })
+  // handle the response with this route passing state
+  // and expiring the conversation after 60 seconds
+  .route('handleDoitConfirmation', state, 60)
 })
 
+slapp.route('handleDoitConfirmation', (msg, state) => {
+  // if they respond with anything other than a button selection,
+  // get them back on track
+  if (msg.type !== 'action') {
+    msg
+      .say('Please choose a Yes or No button :wink:')
+      // notice we have to declare the next route to handle the response
+      // every time. Pass along the state and expire the conversation
+      // 60 seconds from now.
+      .route('handleDoitConfirmation', state, 60)
+    return
+  }
 
 // response to the user typing "help"
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
