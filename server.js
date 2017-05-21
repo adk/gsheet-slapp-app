@@ -37,6 +37,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 // response to the user typing "help"
 slapp.message('cogs', ['mention', 'direct_message'], (msg) => {
   msg.say('cogs')
+  console.log('cogs received');
 })
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
