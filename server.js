@@ -37,7 +37,7 @@ slapp.use((msg, next) => {
 slapp.command('/cogs', (msg) => {
   // `respond` is used for actions or commands and uses the `response_url` provided by the 
   // incoming request from Slack 
-  msg.respond(`Please authorize this app by visiting this url and entering the code here:`, )
+  //msg.respond(`Please authorize this app by visiting this url and entering the code here:`, )
   
    // respond with an interactive message with buttons Yes and No
   msg
