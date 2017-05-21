@@ -15,7 +15,7 @@ var slapp = Slapp({
   context: Context()
 })
 
-
+/*
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -33,8 +33,9 @@ I will respond to the following messages:
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
   msg.say(HELP_TEXT)
 })
+*/
 
-// response to the user typing "help"
+// response to the user typing "cogs"
 slapp.message('cogs', ['mention', 'direct_message'], (msg) => {
   msg.say('cogs')
   console.log('cogs received');
