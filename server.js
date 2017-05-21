@@ -37,10 +37,10 @@ slapp.use((msg, next) => {
 slapp.command('/cogs', (msg) => {
   // `respond` is used for actions or commands and uses the `response_url` provided by the 
   // incoming request from Slack 
-  //msg.respond(`Please authorize this app by visiting this url and entering the code here:`, )
+  msg.respond(`Please authorize this app by visiting this url and entering the code here:`)
   
    // respond with an interactive message with buttons Yes and No
-  msg
+  /*msg
   .say({
     text: '',
     attachments: [
@@ -57,6 +57,7 @@ slapp.command('/cogs', (msg) => {
   // handle the response with this route passing state
   // and expiring the conversation after 60 seconds
   .route('handleDoitConfirmation', state, 60)
+  */
 })
 
 slapp.route('handleDoitConfirmation', (msg, state) => {
