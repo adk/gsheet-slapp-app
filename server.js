@@ -29,6 +29,11 @@ I will respond to the following messages:
 // Setup different handlers for messages
 //*********************************************
 
+slapp.use((msg, next) => {
+  console.log(msg)
+  next()
+})
+
 // response to the user typing "help"
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
   msg.say(HELP_TEXT)
