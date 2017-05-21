@@ -15,7 +15,7 @@ var slapp = Slapp({
   context: Context()
 })
 
-/*
+
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -32,13 +32,6 @@ I will respond to the following messages:
 // response to the user typing "help"
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
   msg.say(HELP_TEXT)
-})
-*/
-
-// response to the user typing "cogs"
-slapp.message('cogs', ['mention', 'direct_message'], (msg) => {
-  //msg.say('cogs')
-  console.log('cogs received');
 })
 
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
@@ -129,5 +122,5 @@ server.listen(port, (err) => {
     return console.error(err)
   }
 
-  console.log(`Now Listening on port ${port}`)
+  console.log(`Listening on port ${port}`)
 })
