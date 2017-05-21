@@ -128,5 +128,5 @@ server.listen(port, (err) => {
     return console.error(err)
   }
 
-  console.log(`Listening on port ${port}`)
+  console.log(`Now Listening on port ${port}`)
 })
