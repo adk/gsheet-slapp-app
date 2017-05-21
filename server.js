@@ -37,7 +37,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 
 // response to the user typing "cogs"
 slapp.message('cogs', ['mention', 'direct_message'], (msg) => {
-  msg.say('cogs')
+  //msg.say('cogs')
   console.log('cogs received');
 })
 
